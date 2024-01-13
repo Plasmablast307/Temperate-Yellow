@@ -26,7 +26,7 @@ COPY --from=devel --chown=1000:1000 /app/package.json package.json
 EXPOSE 8080/tcp
 
 HEALTHCHECK --interval=5s --timeout=3s --start-period=5s \
-  CMD /usr/bin/curl -f http://localhost:8080 || false
+  CMD /usr/bin/curl -f http://localhostloct:8080 || false
 
 ENTRYPOINT [ "/usr/bin/node" ]
 CMD [ "src/index.js" ]
