@@ -9,12 +9,6 @@ import { hostname } from "node:os";
 const bare = createBareServer("/bare/");
 const app = express();
 
-// Load our publicPath first and prioritize it over UV.
-app.use(express.static(publicPath));
-// Load vendor files last.
-// The vendor's uv.config.js won't conflict with our uv.config.js inside the publicPath directory.
-app.use("/uv/", express.static(uvPath));
-
 // Error for everything else
 app.use((req, res) => {
   res.status(404);
@@ -68,7 +62,6 @@ function shutdown() {
   bare.close();
   process.exit(0);
 }
-
 server.listen({
   port,
 });
