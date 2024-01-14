@@ -9,12 +9,12 @@
 
   // These tasks can be run from CodeSandbox. Running one will open a log in the app.
   "tasks": {
-    "PORT=8080 npm run start": {
-      "name": "PORT=8080 npm run start",
-      "command": "PORT=8080 npm run start",
+    "PORT=80 npm run start": {
+      "name": "PORT=80 npm run start",
+      "command": "PORT=80 npm run start",
       "runAtStart": true,
       "preview": {
-        "port": 8080
+        "port": 80
       }
     }
   }
